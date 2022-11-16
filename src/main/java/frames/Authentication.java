@@ -94,15 +94,16 @@ public class Authentication extends javax.swing.JFrame {
         if(isEmpty(username) || isEmpty(password)) {
             JOptionPane.showMessageDialog(rootPane, "Preencha os dois campos!");
         }
-        if ("si400_2022".equals(username) && "si400_2022".equals(password)) {
-            final MainScreen mainScreen = new MainScreen(username, password);
-            mainScreen.setVisible(true);
-            dispose();  
-        }
-        else {
+        else if (!"si400_2022".equals(username) || !"si400_2022".equals(password)) {
+
             JOptionPane.showMessageDialog(rootPane, "Dados incorretos, tente novamente!");
             jTextField1.setText("");
             jPasswordField1.setText("");
+        }
+        else {
+            final MainScreen mainScreen = new MainScreen(username, password);
+            mainScreen.setVisible(true);
+            dispose();  
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

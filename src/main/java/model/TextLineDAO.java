@@ -20,7 +20,7 @@ public class TextLineDAO extends DAO {
     }
     public List<TextLine> findAllTextLines() {
         final var lines = new ArrayList();
-        final var rs = executeSql("SELECT * FROM Fragmentos WHERE groupId = 6");
+        final var rs = executeSql("SELECT * FROM Fragmentos WHERE groupId = 6 ORDER BY line");
         try {
             while(rs.next()) {
                 lines.add(buildTextLine(rs));
