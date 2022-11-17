@@ -10,13 +10,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-/**
- *
- * @author gubec
- */
 public class TextWriter {
     
     
+     /**
+     * Method responsible for save a text file
+     *
+     * @param file   this string contains the filename
+     * @param text   this string contains the text that will be saved
+     */
     public static void execute(final String file, final String text) {
         final Path path = Paths.get("src/main/java/utils/" + file);
         

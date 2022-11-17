@@ -6,10 +6,6 @@ package frames;
 
 import controller.Controller;
 
-/**
- *
- * @author gubec
- */
 public class MainScreen extends javax.swing.JFrame {
     
     /**

@@ -4,10 +4,6 @@
  */
 package frames;
 
-/**
- *
- * @author gubec
- */
 public class Help extends javax.swing.JFrame {
 
     /**

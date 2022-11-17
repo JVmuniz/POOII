@@ -4,10 +4,6 @@
  */
 package model;
 
-/**
- *
- * @author gubec
- */
 public final class TextLine {
     
     private final int groupId;

@@ -4,14 +4,9 @@
  */
 package frames;
 
-import frames.MainScreen;
 import javax.swing.JOptionPane;
 import static org.apache.commons.lang3.ObjectUtils.isEmpty;
 
-/**
- *
- * @author gubec
- */
 public class Authentication extends javax.swing.JFrame {
 
     /**

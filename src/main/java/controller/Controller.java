@@ -9,12 +9,15 @@ import model.TextLine;
 import model.TextLineDAO;
 import utils.TextWriter;
 
-/**
- *
- * @author gubec
- */
 public class Controller {
     
+     /**
+     * Method responsible for get a text from a group on database and save in a txt file
+     *
+     * @param username   this string contains the username to access the database
+     * @param password   this string contains the password to access the database
+     * @return String    this string contains the text found in the database
+     */
     public static String getTextFromGroup(final String username, final String password) {
         final var textLineDAO = new TextLineDAO(username, password);
         final var textLines = textLineDAO.findAllTextLines();

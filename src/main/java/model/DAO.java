@@ -10,27 +10,33 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- *
- * @author gubec
- */
 public abstract class DAO {
     
-    public static Connection connection;
-    public static Statement stm;
+    private static Connection connection;
+    private static Statement stm;
     private static ResultSet rs;
-    //String driver = "com.mysql.jdbc.Driver";
 
+     /**
+     * Method responsible for connect on database
+     *
+     * @param username   this string contains the username to access the database
+     * @param password   this string contains the password to access the database
+     */
     protected void connect(final String username, final String password) {
         try {
-           // System.setProperty("jbdc:Drivers", driver);
-            connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/SI400", "root", password);
+            connection = DriverManager.getConnection("jdbc:mariadb://143.106.243.64:3306/SI400", username, password);
             System.out.println("Connected successfully");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
     }
 
+     /**
+     * Method responsible for execute a SQL query on database
+     *
+     * @param sql           this string contains the sql query that will be executed
+     * @return ResultSet    this ResultSet contains the result found on database
+     */
     protected static ResultSet executeSql(final String sql) {
         try {
             stm = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -42,7 +48,10 @@ public abstract class DAO {
         return rs;
     }
 
-    public void closeConnection() {
+     /**
+     * Method responsible for disconnect to database
+     */
+    protected static void closeConnection() {
         try {
             connection.close();
             System.out.println("Desconnected successfully!");

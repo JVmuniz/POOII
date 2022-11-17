@@ -7,10 +7,6 @@ package frames;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author gubec
- */
 public class About extends javax.swing.JFrame {
 
     /**
